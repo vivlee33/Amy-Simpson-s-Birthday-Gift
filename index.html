@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Letter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+
+      background-image: url('https://i.pinimg.com/736x/91/47/07/914707d3673d0da60f3ba334e97504fe.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Soft overlay to let the letter stand out */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 20, 10, 0.25);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .letter-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      width: 100%;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .letter {
+      background: #fdf6e3;
+      border-radius: 18px;
+      border: 2px solid #c9a96e;
+      box-shadow:
+        0 8px 40px rgba(80, 50, 10, 0.22),
+        0 2px 8px rgba(80, 50, 10, 0.10),
+        inset 0 0 60px rgba(210, 170, 100, 0.08);
+      padding: 56px 60px 52px;
+
+      /* Subtle paper texture via gradient */
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 27px,
+          rgba(180, 140, 80, 0.07) 27px,
+          rgba(180, 140, 80, 0.07) 28px
+        ),
+        linear-gradient(160deg, #fefaf0 0%, #fdf3d8 60%, #faefd0 100%);
+    }
+
+    /* Decorative corner flourish */
+    .letter::before,
+    .letter::after {
+      content: '✦';
+      position: absolute;
+      font-size: 1rem;
+      color: #c9a96e;
+      opacity: 0.55;
+    }
+    .letter::before { top: 18px; left: 24px; }
+    .letter::after  { bottom: 18px; right: 24px; }
+
+    .letter-date {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #8a6d3b;
+      margin-bottom: 28px;
+      letter-spacing: 0.03em;
+    }
+
+    .letter-salutation {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.25rem;
+      color: #5c3d11;
+      margin-bottom: 20px;
+    }
+
+    .letter-body {
+      font-size: 1.08rem;
+      line-height: 1.95;
+      color: #3b2a10;
+      font-weight: 300;
+    }
+
+    .letter-body p {
+      margin-bottom: 1.3em;
+      text-indent: 2em;
+    }
+
+    .letter-body p:first-child {
+      text-indent: 0;
+    }
+
+    .letter-closing {
+      margin-top: 32px;
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #5c3d11;
+      line-height: 2.1;
+    }
+
+    .letter-signature {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.3rem;
+      color: #4a2e08;
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c9a96e, transparent);
+      margin: 28px auto;
+    }
+
+    @media (max-width: 600px) {
+      .letter {
+        padding: 36px 28px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="letter-wrapper">
+    <div class="letter">
+
+      <div class="letter-date">April 20, 2026</div>
+
+      <div class="letter-salutation">Dear Friend,</div>
+
+      <div class="divider"></div>
+
+      <div class="letter-body">
+        <p>
+          Replace this paragraph with the opening of your letter. This is where you set
+          the tone and greet your reader warmly, drawing them into your words.
+        </p>
+        <p>
+          Continue your thoughts here in a second paragraph. Feel free to write as much
+          as you need — the page will grow gracefully to accommodate your words.
+        </p>
+        <p>
+          Add as many paragraphs as you like. Each one flows naturally into the next,
+          carried along by the rhythm of your voice and your intention.
+        </p>
+        <p>
+          This final paragraph might bring things to a close, circle back to your opening
+          thought, or leave the reader with something to hold onto long after they've
+          finished reading.
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="letter-closing">
+        With warmth and sincerity,<br/>
+        <span class="letter-signature">Your Name</span>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
