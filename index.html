@@ -19,26 +19,31 @@
       justify-content: center;
       padding: 48px 24px;
 
-      background-image: url('https://i.pinimg.com/736x/91/47/07/914707d3673d0da60f3ba334e97504fe.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       font-family: 'Cormorant Garamond', serif;
     }
 
+    .bg-img {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
     /* Soft overlay to let the letter stand out */
-    body::before {
-      content: '';
+    .bg-overlay {
       position: fixed;
       inset: 0;
       background: rgba(30, 20, 10, 0.25);
       pointer-events: none;
-      z-index: 0;
+      z-index: 1;
     }
 
     .letter-wrapper {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 680px;
       width: 100%;
       animation: fadeUp 0.9s ease both;
@@ -147,6 +152,9 @@
   </style>
 </head>
 <body>
+
+  <img class="bg-img" src="https://raw.githubusercontent.com/vivlee33/Amy-Simpson-s-Birthday-Gift/f73500fb584d298ded481bcef4e539983bbcf21f/background" alt="" referrerpolicy="no-referrer" crossorigin="anonymous" />
+  <div class="bg-overlay"></div>
 
   <div class="letter-wrapper">
     <div class="letter">
